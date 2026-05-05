@@ -9,6 +9,7 @@ function App() {
     <CartProvider>
        <Fragment>
           <Header />
+          <Products />
        </Fragment>
     </CartProvider>
   )
