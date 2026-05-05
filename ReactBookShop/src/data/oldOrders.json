@@ -1,0 +1,722 @@
+[
+  {
+    "Id": 1,
+    "fk_user": 1,
+    "data": [
+      {
+        "id_book": 1,
+        "cantidad": 1,
+        "precio_libro": 9.99,
+        "precio_total": 9.99
+      },
+      {
+        "id_book": 6,
+        "cantidad": 2,
+        "precio_libro": 18.74,
+        "precio_total": 37.48
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "fk_user": 1,
+    "data": [
+      {
+        "id_book": 6,
+        "cantidad": 1,
+        "precio_libro": 18.74,
+        "precio_total": 18.74
+      },
+      {
+        "id_book": 12,
+        "cantidad": 2,
+        "precio_libro": 27.78,
+        "precio_total": 55.56
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "fk_user": 2,
+    "data": [
+      {
+        "id_book": 3,
+        "cantidad": 2,
+        "precio_libro": 12.14,
+        "precio_total": 24.28
+      },
+      {
+        "id_book": 8,
+        "cantidad": 3,
+        "precio_libro": 20.02,
+        "precio_total": 60.06
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "fk_user": 2,
+    "data": [
+      {
+        "id_book": 8,
+        "cantidad": 2,
+        "precio_libro": 20.02,
+        "precio_total": 40.04
+      },
+      {
+        "id_book": 14,
+        "cantidad": 2,
+        "precio_libro": 27.83,
+        "precio_total": 55.66
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "fk_user": 3,
+    "data": [
+      {
+        "id_book": 5,
+        "cantidad": 1,
+        "precio_libro": 13.59,
+        "precio_total": 13.59
+      },
+      {
+        "id_book": 10,
+        "cantidad": 1,
+        "precio_libro": 20.59,
+        "precio_total": 20.59
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "fk_user": 3,
+    "data": [
+      {
+        "id_book": 10,
+        "cantidad": 3,
+        "precio_libro": 20.59,
+        "precio_total": 61.77
+      },
+      {
+        "id_book": 16,
+        "cantidad": 2,
+        "precio_libro": 9.99,
+        "precio_total": 19.98
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "fk_user": 4,
+    "data": [
+      {
+        "id_book": 7,
+        "cantidad": 2,
+        "precio_libro": 19.47,
+        "precio_total": 38.94
+      },
+      {
+        "id_book": 12,
+        "cantidad": 2,
+        "precio_libro": 27.78,
+        "precio_total": 55.56
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "fk_user": 4,
+    "data": [
+      {
+        "id_book": 12,
+        "cantidad": 1,
+        "precio_libro": 27.78,
+        "precio_total": 27.78
+      },
+      {
+        "id_book": 18,
+        "cantidad": 2,
+        "precio_libro": 12.14,
+        "precio_total": 24.28
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "fk_user": 5,
+    "data": [
+      {
+        "id_book": 9,
+        "cantidad": 1,
+        "precio_libro": 20.39,
+        "precio_total": 20.39
+      },
+      {
+        "id_book": 14,
+        "cantidad": 3,
+        "precio_libro": 27.83,
+        "precio_total": 83.49
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "fk_user": 5,
+    "data": [
+      {
+        "id_book": 14,
+        "cantidad": 2,
+        "precio_libro": 27.83,
+        "precio_total": 55.66
+      },
+      {
+        "id_book": 20,
+        "cantidad": 2,
+        "precio_libro": 13.59,
+        "precio_total": 27.18
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "fk_user": 6,
+    "data": [
+      {
+        "id_book": 11,
+        "cantidad": 2,
+        "precio_libro": 27.49,
+        "precio_total": 54.98
+      },
+      {
+        "id_book": 16,
+        "cantidad": 1,
+        "precio_libro": 9.99,
+        "precio_total": 9.99
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "fk_user": 6,
+    "data": [
+      {
+        "id_book": 16,
+        "cantidad": 3,
+        "precio_libro": 9.99,
+        "precio_total": 29.97
+      },
+      {
+        "id_book": 22,
+        "cantidad": 2,
+        "precio_libro": 19.47,
+        "precio_total": 38.94
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "fk_user": 7,
+    "data": [
+      {
+        "id_book": 13,
+        "cantidad": 1,
+        "precio_libro": 27.89,
+        "precio_total": 27.89
+      },
+      {
+        "id_book": 18,
+        "cantidad": 2,
+        "precio_libro": 12.14,
+        "precio_total": 24.28
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "fk_user": 7,
+    "data": [
+      {
+        "id_book": 18,
+        "cantidad": 1,
+        "precio_libro": 12.14,
+        "precio_total": 12.14
+      },
+      {
+        "id_book": 24,
+        "cantidad": 2,
+        "precio_libro": 20.39,
+        "precio_total": 40.78
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "fk_user": 8,
+    "data": [
+      {
+        "id_book": 15,
+        "cantidad": 2,
+        "precio_libro": 27.59,
+        "precio_total": 55.18
+      },
+      {
+        "id_book": 20,
+        "cantidad": 3,
+        "precio_libro": 13.59,
+        "precio_total": 40.77
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "fk_user": 8,
+    "data": [
+      {
+        "id_book": 20,
+        "cantidad": 2,
+        "precio_libro": 13.59,
+        "precio_total": 27.18
+      },
+      {
+        "id_book": 26,
+        "cantidad": 2,
+        "precio_libro": 27.49,
+        "precio_total": 54.98
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "fk_user": 9,
+    "data": [
+      {
+        "id_book": 17,
+        "cantidad": 1,
+        "precio_libro": 11.15,
+        "precio_total": 11.15
+      },
+      {
+        "id_book": 22,
+        "cantidad": 1,
+        "precio_libro": 19.47,
+        "precio_total": 19.47
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "fk_user": 9,
+    "data": [
+      {
+        "id_book": 22,
+        "cantidad": 3,
+        "precio_libro": 19.47,
+        "precio_total": 58.41
+      },
+      {
+        "id_book": 28,
+        "cantidad": 2,
+        "precio_libro": 27.89,
+        "precio_total": 55.78
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "fk_user": 10,
+    "data": [
+      {
+        "id_book": 19,
+        "cantidad": 2,
+        "precio_libro": 12.95,
+        "precio_total": 25.9
+      },
+      {
+        "id_book": 24,
+        "cantidad": 2,
+        "precio_libro": 20.39,
+        "precio_total": 40.78
+      }
+    ]
+  },
+  {
+    "Id": 20,
+    "fk_user": 10,
+    "data": [
+      {
+        "id_book": 24,
+        "cantidad": 1,
+        "precio_libro": 20.39,
+        "precio_total": 20.39
+      },
+      {
+        "id_book": 30,
+        "cantidad": 2,
+        "precio_libro": 27.59,
+        "precio_total": 55.18
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "fk_user": 11,
+    "data": [
+      {
+        "id_book": 21,
+        "cantidad": 1,
+        "precio_libro": 18.74,
+        "precio_total": 18.74
+      },
+      {
+        "id_book": 26,
+        "cantidad": 3,
+        "precio_libro": 27.49,
+        "precio_total": 82.47
+      }
+    ]
+  },
+  {
+    "Id": 22,
+    "fk_user": 11,
+    "data": [
+      {
+        "id_book": 26,
+        "cantidad": 2,
+        "precio_libro": 27.49,
+        "precio_total": 54.98
+      },
+      {
+        "id_book": 32,
+        "cantidad": 2,
+        "precio_libro": 11.15,
+        "precio_total": 22.3
+      }
+    ]
+  },
+  {
+    "Id": 23,
+    "fk_user": 12,
+    "data": [
+      {
+        "id_book": 23,
+        "cantidad": 2,
+        "precio_libro": 20.02,
+        "precio_total": 40.04
+      },
+      {
+        "id_book": 28,
+        "cantidad": 1,
+        "precio_libro": 27.89,
+        "precio_total": 27.89
+      }
+    ]
+  },
+  {
+    "Id": 24,
+    "fk_user": 12,
+    "data": [
+      {
+        "id_book": 28,
+        "cantidad": 3,
+        "precio_libro": 27.89,
+        "precio_total": 83.67
+      },
+      {
+        "id_book": 34,
+        "cantidad": 2,
+        "precio_libro": 12.95,
+        "precio_total": 25.9
+      }
+    ]
+  },
+  {
+    "Id": 25,
+    "fk_user": 13,
+    "data": [
+      {
+        "id_book": 25,
+        "cantidad": 1,
+        "precio_libro": 20.59,
+        "precio_total": 20.59
+      },
+      {
+        "id_book": 30,
+        "cantidad": 2,
+        "precio_libro": 27.59,
+        "precio_total": 55.18
+      }
+    ]
+  },
+  {
+    "Id": 26,
+    "fk_user": 13,
+    "data": [
+      {
+        "id_book": 30,
+        "cantidad": 1,
+        "precio_libro": 27.59,
+        "precio_total": 27.59
+      },
+      {
+        "id_book": 36,
+        "cantidad": 2,
+        "precio_libro": 18.74,
+        "precio_total": 37.48
+      }
+    ]
+  },
+  {
+    "Id": 27,
+    "fk_user": 14,
+    "data": [
+      {
+        "id_book": 27,
+        "cantidad": 2,
+        "precio_libro": 27.78,
+        "precio_total": 55.56
+      },
+      {
+        "id_book": 32,
+        "cantidad": 3,
+        "precio_libro": 11.15,
+        "precio_total": 33.45
+      }
+    ]
+  },
+  {
+    "Id": 28,
+    "fk_user": 14,
+    "data": [
+      {
+        "id_book": 32,
+        "cantidad": 2,
+        "precio_libro": 11.15,
+        "precio_total": 22.3
+      },
+      {
+        "id_book": 38,
+        "cantidad": 2,
+        "precio_libro": 20.02,
+        "precio_total": 40.04
+      }
+    ]
+  },
+  {
+    "Id": 29,
+    "fk_user": 15,
+    "data": [
+      {
+        "id_book": 29,
+        "cantidad": 1,
+        "precio_libro": 27.83,
+        "precio_total": 27.83
+      },
+      {
+        "id_book": 34,
+        "cantidad": 1,
+        "precio_libro": 12.95,
+        "precio_total": 12.95
+      }
+    ]
+  },
+  {
+    "Id": 30,
+    "fk_user": 15,
+    "data": [
+      {
+        "id_book": 34,
+        "cantidad": 3,
+        "precio_libro": 12.95,
+        "precio_total": 38.85
+      },
+      {
+        "id_book": 40,
+        "cantidad": 2,
+        "precio_libro": 20.59,
+        "precio_total": 41.18
+      }
+    ]
+  },
+  {
+    "Id": 31,
+    "fk_user": 16,
+    "data": [
+      {
+        "id_book": 31,
+        "cantidad": 2,
+        "precio_libro": 9.99,
+        "precio_total": 19.98
+      },
+      {
+        "id_book": 36,
+        "cantidad": 2,
+        "precio_libro": 18.74,
+        "precio_total": 37.48
+      }
+    ]
+  },
+  {
+    "Id": 32,
+    "fk_user": 16,
+    "data": [
+      {
+        "id_book": 36,
+        "cantidad": 1,
+        "precio_libro": 18.74,
+        "precio_total": 18.74
+      },
+      {
+        "id_book": 42,
+        "cantidad": 2,
+        "precio_libro": 27.78,
+        "precio_total": 55.56
+      }
+    ]
+  },
+  {
+    "Id": 33,
+    "fk_user": 17,
+    "data": [
+      {
+        "id_book": 33,
+        "cantidad": 1,
+        "precio_libro": 12.14,
+        "precio_total": 12.14
+      },
+      {
+        "id_book": 38,
+        "cantidad": 3,
+        "precio_libro": 20.02,
+        "precio_total": 60.06
+      }
+    ]
+  },
+  {
+    "Id": 34,
+    "fk_user": 17,
+    "data": [
+      {
+        "id_book": 38,
+        "cantidad": 2,
+        "precio_libro": 20.02,
+        "precio_total": 40.04
+      },
+      {
+        "id_book": 44,
+        "cantidad": 2,
+        "precio_libro": 27.83,
+        "precio_total": 55.66
+      }
+    ]
+  },
+  {
+    "Id": 35,
+    "fk_user": 18,
+    "data": [
+      {
+        "id_book": 35,
+        "cantidad": 2,
+        "precio_libro": 13.59,
+        "precio_total": 27.18
+      },
+      {
+        "id_book": 40,
+        "cantidad": 1,
+        "precio_libro": 20.59,
+        "precio_total": 20.59
+      }
+    ]
+  },
+  {
+    "Id": 36,
+    "fk_user": 18,
+    "data": [
+      {
+        "id_book": 40,
+        "cantidad": 3,
+        "precio_libro": 20.59,
+        "precio_total": 61.77
+      },
+      {
+        "id_book": 46,
+        "cantidad": 2,
+        "precio_libro": 9.99,
+        "precio_total": 19.98
+      }
+    ]
+  },
+  {
+    "Id": 37,
+    "fk_user": 19,
+    "data": [
+      {
+        "id_book": 37,
+        "cantidad": 1,
+        "precio_libro": 19.47,
+        "precio_total": 19.47
+      },
+      {
+        "id_book": 42,
+        "cantidad": 2,
+        "precio_libro": 27.78,
+        "precio_total": 55.56
+      }
+    ]
+  },
+  {
+    "Id": 38,
+    "fk_user": 19,
+    "data": [
+      {
+        "id_book": 42,
+        "cantidad": 1,
+        "precio_libro": 27.78,
+        "precio_total": 27.78
+      },
+      {
+        "id_book": 48,
+        "cantidad": 2,
+        "precio_libro": 12.14,
+        "precio_total": 24.28
+      }
+    ]
+  },
+  {
+    "Id": 39,
+    "fk_user": 20,
+    "data": [
+      {
+        "id_book": 39,
+        "cantidad": 2,
+        "precio_libro": 20.39,
+        "precio_total": 40.78
+      },
+      {
+        "id_book": 44,
+        "cantidad": 3,
+        "precio_libro": 27.83,
+        "precio_total": 83.49
+      }
+    ]
+  },
+  {
+    "Id": 40,
+    "fk_user": 20,
+    "data": [
+      {
+        "id_book": 44,
+        "cantidad": 2,
+        "precio_libro": 27.83,
+        "precio_total": 55.66
+      },
+      {
+        "id_book": 50,
+        "cantidad": 2,
+        "precio_libro": 13.59,
+        "precio_total": 27.18
+      }
+    ]
+  }
+]
