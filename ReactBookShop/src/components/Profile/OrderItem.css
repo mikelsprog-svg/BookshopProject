@@ -1,0 +1,9 @@
+.row td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+.row:hover {
+    background-color: #f9f9f9;
+}
