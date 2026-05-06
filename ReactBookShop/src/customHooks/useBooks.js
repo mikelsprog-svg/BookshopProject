@@ -1,14 +1,15 @@
 import {useState, useEffect} from "react";
 import {allItems, getProductsMock} from "../data/books.js";
 
-export function useBooks()
+export function useBooks(filterId,page)
 {
     const [allBooks, setAllBooks] = useState([]);
     const [booksPaged, setBooksPaged] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [page, setPage] = useState(1);
-    const [filter, setFilter] = useState("any");
+    const [metaData, setMetadata] = useState({});
+
+
     useEffect(()=>{
         setLoading(true);
         const timer = setTimeout(()=>
@@ -33,15 +34,24 @@ export function useBooks()
 
         if(page!==0)
         {
-            if(filter === "any")
-                setBooksPaged(getProductsMock(page).items)
-            else setBooksPaged(getProductsMock(page).items.filter((f)=>f.Category===filter));
+            if(filterId === "any")
+            {   let metaD,bookD;
+
+                [metaD, bookD] = [getProductsMock(page).metadata , getProductsMock(page).items];
+                setBooksPaged(bookD);
+                setMetadata(metaD);
+            }
+            else
+            {
+                let metaD,bookD;
+                [metaD, bookD] = [getProductsMock(page).metadata , getProductsMock(page).items.filter((f) => f.Category === filterId)];
+                setBooksPaged(bookD);
+                setMetadata(metaD);
+            }
 
         }
 
-
-
-
     })
+    return {booksPaged,allBooks, metaData, loading,error }
 }
 
