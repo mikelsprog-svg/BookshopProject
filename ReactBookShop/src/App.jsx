@@ -6,6 +6,8 @@ import { CartProvider } from './context/cart/CartProvider'
 import { CartPage } from "./Pages/CartPage.jsx";
 import { CheckoutPage } from "./Pages/CheckoutPage.jsx";
 import { CartContext } from './context/cart/CartContext.jsx'
+import {Products} from "./Pages/Products.jsx";
+import {ProductPage} from "./Pages/ProductPage.jsx";
 
 function App() {
   return (
@@ -15,8 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<div>Página de inicio</div>} />
-        <Route path="/SearchLibro" element={<div>Página de SearchLibro</div>} />
-        <Route path="/BookPage" element={<div>BookPage</div>} />
+        <Route path="/SearchLibro" element={<Products/>} />
+        <Route path="/BookPage" element={<ProductPage/>} />
         <Route path="/login" element={<div>Página de login</div>} />
         <Route path="/CartPage" element={<CartPage />} />
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
