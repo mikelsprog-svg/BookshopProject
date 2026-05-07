@@ -6,12 +6,15 @@ export function Products()
 {
     const [pageNum,setPage]  =useState(1);
     const [filterId,setFilter] =useState("any");
+    const [searchVal,setSearchVal] =useState("las");
 
-   const {booksPaged,allBooks, metaData, loading,error } =useBooks(filterId,pageNum);
+
+   const {booksPaged,allBooks,searchedBooks, metaData, loading,error } =useBooks(filterId,pageNum,searchVal,-1);
 return(
         <Fragment>
         <div className="products_body">
             <GridBooksComponent booksPaged={booksPaged}
+                                searchedBooks={searchedBooks}
                                 loading={loading}
                                 error={error} />
 
