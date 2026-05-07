@@ -1,0 +1,29 @@
+.checkout-page {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  padding: 24px;
+}
+
+
+
+@media (max-width: 900px) {
+  .checkout-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Evitar que el resumen del checkout se estire a toda la columna */
+.checkout-page {
+  align-items: start;
+}
+
+.checkout-page__right {
+  align-self: start;
+}
+
+.checkout-page__right .cart-summary {
+  min-height: auto;
+  max-height: 520px; /* limita la altura si hay mucho contenido */
+  overflow: auto;
+}
