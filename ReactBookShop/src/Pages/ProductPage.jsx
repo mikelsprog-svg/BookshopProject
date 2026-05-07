@@ -2,6 +2,7 @@ import Header from "../components/Header/Header.jsx";
 import "./ProductPage.css"
 import {useState} from "react";
 import {useBooks} from "../customHooks/useBooks.js";
+import {useComment} from "../customHooks/useComment.js";
 import {BookInfoBig} from "../components/ProductPage/BookInfoBig.jsx";
 import {Comment} from "../components/ProductPage/Comment.jsx";
 
@@ -9,8 +10,10 @@ export function ProductPage()
 {
 
     const [bookId, setBookId] = useState(5);
-    const {bookFromId, loading } =useBooks("",0,undefined,3);
-    if(loading)
+    const {bookFromId, loading } = useBooks("",0,undefined,3);
+    const {comments, loading: loadingComments } = useComment(bookId, -1);
+
+    if(loading || loadingComments)
     {
         return (<></>)
     }
@@ -32,9 +35,18 @@ export function ProductPage()
             </div>
             <div className="commentspanel_div">
 
-                <Comment/>
-                <Comment/>
-                <Comment/>
+                {comments.length > 0 ? (
+                    comments.map((item) => (
+                        <Comment
+                            key={item.Id}
+                            review={item.Review}
+                            rating={item.Rating}
+                            user={item.User}
+                        />
+                    ))
+                ) : (
+                    <p>Este libro aún no tiene comentarios.</p>
+                )}
 
             </div>
 
