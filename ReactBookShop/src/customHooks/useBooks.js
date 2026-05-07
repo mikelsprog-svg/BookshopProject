@@ -1,57 +1,87 @@
-import {useState, useEffect} from "react";
-import {allItems, getProductsMock} from "../data/books.js";
+import { useState, useEffect } from "react";
+import {
+    allItems,
+    getProductsMock,
+    getProductsMockFakeElastiSearch,
+} from "../data/books.js";
 
-export function useBooks(filterId,page)
-{
+export function useBooks(categoryId, page, searchVal, bookId) {
     const [allBooks, setAllBooks] = useState([]);
+    const [searchedBooks, setSearchedBooks] = useState([]);
+    const [bookFromId, setGetBookFromId] = useState({});
     const [booksPaged, setBooksPaged] = useState([]);
+
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [metaData, setMetadata] = useState({});
 
-
-    useEffect(()=>{
+    // carga inicial
+    useEffect(() => {
         setLoading(true);
-        const timer = setTimeout(()=>
-        {
-            try
-            {
+
+        const timer = setTimeout(() => {
+            try {
                 setAllBooks(allItems);
                 setLoading(false);
-
-            }catch(e)
-            {
+            } catch (e) {
                 setError("Book not found");
+                setLoading(false);
+            }
+        }, 900);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    // lógica principal
+    useEffect(() => {
+        if (allBooks.length === 0) return;
+
+        try {
+            // búsqueda
+            if (searchVal && searchVal.length > 0) {
+                const { metadata, items } =
+                    getProductsMockFakeElastiSearch(page, searchVal);
+
+                setSearchedBooks(items);
+                setMetadata(metadata);
+
+                return;
             }
 
-        },900)
+            // paginación normal
+            const { metadata, items } = getProductsMock(page);
 
-        return ()=>clearInterval(timer);
-    },[])
+            // filtro categoría
+            const filteredBooks =
+                categoryId === "any"
+                    ? items
+                    : items.filter(
+                        (f) => f.Category === Number(categoryId)
+                    );
 
-    useEffect(()=>{
-        if(allBooks.length === 0) return;
+            setBooksPaged(filteredBooks);
+            setMetadata(metadata);
 
-        if(page!==0)
-        {
-            if(filterId === "any")
-            {   let metaD,bookD;
+            // búsqueda por id
+            if (bookId !== -1) {
+                const foundBook = allBooks.find(
+                    (e) => e.Id === bookId
+                );
 
-                [metaD, bookD] = [getProductsMock(page).metadata , getProductsMock(page).items];
-                setBooksPaged(bookD);
-                setMetadata(metaD);
+                setGetBookFromId(foundBook || {});
             }
-            else
-            {
-                let metaD,bookD;
-                [metaD, bookD] = [getProductsMock(page).metadata , getProductsMock(page).items.filter((f) => f.Category === filterId)];
-                setBooksPaged(bookD);
-                setMetadata(metaD);
-            }
-
+        } catch (e) {
+            setError("Error loading books");
         }
+    }, [allBooks, categoryId, page, searchVal, bookId]);
 
-    })
-    return {booksPaged,allBooks, metaData, loading,error }
+    return {
+        booksPaged,
+        allBooks,
+        searchedBooks,
+        bookFromId,
+        metaData,
+        loading,
+        error,
+    };
 }
-

@@ -1,7 +1,7 @@
 import {CardBookComponent} from "./CardBookComponent.jsx";
 import './GridBooksComponent.css'
 import { useState, useEffect } from "react";
-export function GridBooksComponent({loading,error,booksPaged})
+export function GridBooksComponent({loading,error,booksPaged,searchedBooks})
 {
     const [resultMsg, setResultMsg] = useState("");
 
@@ -16,7 +16,8 @@ export function GridBooksComponent({loading,error,booksPaged})
     return (
 
         <section className="BookGrid">
-            {booksPaged.map((book)=>(
+            {searchedBooks.length>1? searchedBooks.map((book)=>(
+                <CardBookComponent book={book}/> )) : booksPaged.map((book)=>(
                 <CardBookComponent book={book}/>
             ))
             }

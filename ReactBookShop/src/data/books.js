@@ -1,3 +1,5 @@
+import {forwardRef} from "react";
+
 export const allItems = [
   {
     "Id": 1,
@@ -859,3 +861,41 @@ export const getProductsMock = (page = 1) => {
     items: allItems.slice(start, end),
   };
 };
+
+export const getProductsMockFakeElastiSearch = (page = 1, search ) =>
+{
+
+  const itemsPerPage = 20;
+  const searchedItems = [] ;
+
+
+  const searchRegex = search
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "|");
+
+  const regex = new RegExp(searchRegex, "i");
+  for (const book of allItems)
+  {
+    const compareVar =  `${book.Author} ${book.Description} ${book.Name}`.toLowerCase();
+    if (regex.test(compareVar))
+    {
+      console.log("Found " + book.Name);
+      searchedItems.push(book);
+    }
+  }
+  const totalItems = searchedItems.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const safePage = Math.min(Math.max(page, 1), totalPages);
+  const start = (safePage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return {
+    metadata: {
+      totalItems,
+      totalPages,
+      currentPage: safePage,
+    },
+    items: searchedItems.slice(start, end),
+  };
+
+}
