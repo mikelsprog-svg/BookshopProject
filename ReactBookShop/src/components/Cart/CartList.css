@@ -20,6 +20,13 @@
   box-shadow: none;
 }
 
+.cart-list--compact {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  gap: 10px;
+}
+
 .cart-list__footer {
   display: flex;
   justify-content: center;

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CartSideBar } from '../Cart/CartSideBar'
 import './Header.css'
 
 function Header() {
@@ -14,7 +15,7 @@ function Header() {
           <button>🔍</button>
         </div>
         <div className="user-info">
-          <span>🛒</span>
+          <CartSideBar />
           <span>Bienvenido, Jose Luis</span>
           <span>👤</span>
         </div>

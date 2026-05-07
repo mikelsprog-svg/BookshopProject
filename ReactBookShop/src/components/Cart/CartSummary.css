@@ -50,3 +50,39 @@
 .cart-summary__continue:hover {
   text-decoration: underline;
 }
+
+/* ===== VALIDACIÓN DE FORMULARIO ===== */
+.checkout-cart__error-message {
+  padding: 12px;
+  background-color: #fff3cd;
+  border: 1.5px solid var(--color-warning);
+  border-radius: var(--radius);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.checkout-cart__error-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #856404;
+  margin: 0;
+}
+
+.cart-summary__checkout--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cart-summary__checkout--disabled:hover {
+  background-color: var(--btn-primary-bg);
+}
