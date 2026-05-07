@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../customHooks/useCart";
 import "./CartSummary.css";
 
 export function CartSummary() {
+    const navigate = useNavigate();
     const { getTotalItems, getTotalPrice } = useCart();
     const totalItems = getTotalItems();
     const totalPrice = getTotalPrice();
@@ -14,10 +16,18 @@ export function CartSummary() {
                 <span className="cart-summary__total">{totalPrice.toFixed(2)}€</span>
                 <span className="cart-summary__items">({totalItems} artículos)</span>
             </div>
-            <button className="btn btn-primary cart-summary__checkout">
+            <button 
+                className="btn btn-primary cart-summary__checkout"
+                onClick={() => navigate("/checkoutPage")}
+            >
                 Tramitar pedido
             </button>
-            <button className="cart-summary__continue">Continuar comprando</button>
+            <button 
+                className="cart-summary__continue"
+                onClick={() => navigate("/")}
+            >
+                Continuar comprando
+            </button>
         </div>
     );
 }
