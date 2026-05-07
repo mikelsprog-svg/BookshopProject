@@ -1,10 +1,13 @@
 import './CardBookComponent.css'
 import {useState} from "react";
 import {StarGrid} from "./StarGrid.jsx";
+import {useCart} from "../../customHooks/useCart.js";
 
 
 export function CardBookComponent({book})
 {
+
+    const {addToCart} = useCart();
     return (
 
         <div className="book_component">
@@ -14,7 +17,7 @@ export function CardBookComponent({book})
             <p className="price">{book.Price} </p>
             <p className="discountPrice">{book.PriceAfterDiscount} </p>
             <StarGrid GlobalRating={book.GlobalRating}/>
-            <button className="cart_button"> Añadir al carrito</button>
+            <button onClick={()=>addToCart(book)}  className="cart_button"> Añadir al carrito</button>
         </div>
     )
 }

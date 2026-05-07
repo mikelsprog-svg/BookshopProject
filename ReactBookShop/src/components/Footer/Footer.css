@@ -1,0 +1,14 @@
+.footer {
+    background: #232946;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    /* Cambiamos fixed por relative para que se quede al final del contenido */
+    position: relative;
+    width: 100%;
+    /* Reset de valores que causaban el descuadre */
+    left: 0;
+    bottom: 0;
+    font-size: 0.9rem; /* Un poco más pequeño para que encaje mejor */
+    z-index: 99;
+}
