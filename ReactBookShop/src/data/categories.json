@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "Name": "Fiction",
+    "isAdulta": false
+  },
+  {
+    "Id": 2,
+    "Name": "Fantasy",
+    "isAdulta": false
+  },
+  {
+    "Id": 3,
+    "Name": "Science",
+    "isAdulta": false
+  },
+  {
+    "Id": 4,
+    "Name": "History",
+    "isAdulta": false
+  },
+  {
+    "Id": 5,
+    "Name": "Business",
+    "isAdulta": false
+  },
+  {
+    "Id": 6,
+    "Name": "Technology",
+    "isAdulta": false
+  },
+  {
+    "Id": 7,
+    "Name": "Romance",
+    "isAdulta": false
+  },
+  {
+    "Id": 8,
+    "Name": "Horror",
+    "isAdulta": true
+  },
+  {
+    "Id": 9,
+    "Name": "Psychology",
+    "isAdulta": false
+  },
+  {
+    "Id": 10,
+    "Name": "Erotic",
+    "isAdulta": true
+  }
+]
