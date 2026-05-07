@@ -1,0 +1,68 @@
+.wrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.inputNumber {
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 4px;
+    width: 50px;
+}
+
+.inputText {
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+}
+
+.table th {
+    background: #212529;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    background: #fcfcfc;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.pageBtn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: not-allowed;
+    color: #aaa;
+    border-radius: 3px;
+}
