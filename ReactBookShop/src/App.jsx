@@ -4,6 +4,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import './App.css'
 import { CartProvider } from './context/cart/CartProvider'
 import { CartPage } from "./Pages/CartPage.jsx";
+import { CheckoutPage } from "./Pages/CheckoutPage.jsx";
+import { CartContext } from './context/cart/CartContext.jsx'
 import {Products} from "./Pages/Products.jsx";
 import {ProductPage} from "./Pages/ProductPage.jsx";
 
@@ -11,14 +13,15 @@ function App() {
   return (
 
     <>
+      <CartProvider>
       <Header />
       <Routes>
         <Route path="/" element={<div>Página de inicio</div>} />
         <Route path="/SearchLibro" element={<Products/>} />
         <Route path="/BookPage" element={<ProductPage/>} />
         <Route path="/login" element={<div>Página de login</div>} />
-        <Route path="/CartPage" element={<div>Página de CartPage</div>} />
-        <Route path="/puchasepreview" element={<div>puchasepreview</div>} />
+        <Route path="/CartPage" element={<CartPage />} />
+        <Route path="/CheckoutPage" element={<CheckoutPage />} />
         <Route path="/profileLOCKED" element={
           <PrivateRoute>
             <div>Página de profile</div>
@@ -30,6 +33,7 @@ function App() {
           </PrivateRoute>
         } />
       </Routes>
+      </CartProvider>
     </>
 
   )
