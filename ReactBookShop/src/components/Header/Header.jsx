@@ -36,7 +36,6 @@ function Header() {
             <img src="/favicon.svg" alt="Logo" />
           </Link>
         </div>
-        </div>
 
         <form className="search-bar" onSubmit={handleSearch}>
           <input
