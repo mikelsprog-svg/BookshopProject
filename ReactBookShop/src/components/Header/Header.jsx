@@ -1,19 +1,49 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CartSideBar } from '../Cart/CartSideBar'
+import categories from '../../data/categories.json'
 import './Header.css'
 
 function Header() {
   const [menuAbierto, setMenuAbierto] = useState(null)
+  const [searchInput, setSearchInput] = useState('')
+  const navigate = useNavigate()
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    if (searchInput.trim()) {
+      navigate(`/SearchLibro?searchVal=${encodeURIComponent(searchInput.trim())}`)
+      setMenuAbierto(null)
+    }
+  }
+
+  const handleCategoryClick = (categoryId) => {
+    navigate(`/SearchLibro?filterId=${categoryId}`)
+    setMenuAbierto(null)
+  }
+
+  // Separar categorías adultas de las normales (opcional, por si quieres ocultarlas o marcarlas)
+  const publicCategories = categories.filter(c => !c.isAdulta)
+  const adultCategories = categories.filter(c => c.isAdulta)
 
   return (
     <header>
       {/* Barra superior */}
       <div className="header-top">
-        <div className="logo">📚</div>
-        <div className="search-bar">
-          <input type="text" placeholder="Busca por titulo, autor o genero" />
-          <button>🔍</button>
+        <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          📚
         </div>
+
+        <form className="search-bar" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Busca por título, autor o género"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button type="submit">🔍</button>
+        </form>
+
         <div className="user-info">
           <CartSideBar />
           <span>Bienvenido, Jose Luis</span>
@@ -24,80 +54,52 @@ function Header() {
       {/* Barra de navegación */}
       <nav className="header-nav">
 
-        {/* Categorías */}
-        <div className="nav-item" onClick={() => setMenuAbierto(menuAbierto === 'categorias' ? null : 'categorias')}>
+        {/* Categorías dinámicas */}
+        <div
+          className="nav-item"
+          onClick={() => setMenuAbierto(menuAbierto === 'categorias' ? null : 'categorias')}
+        >
           Categorías ↓
           {menuAbierto === 'categorias' && (
             <div className="dropdown">
-              <div className="dropdown-columna">
-                <strong>📖 Novela</strong>
-                <ul>
-                  <li>Romance</li>
-                  <li>Drama</li>
-                  <li>Misterio</li>
-                  <li>Thriller</li>
-                  <li>Novela Contemporánea</li>
-                  <li>Novela histórica</li>
-                </ul>
-              </div>
-              <div className="dropdown-columna">
-                <strong>🚀 Ciencia Ficción</strong>
-                <ul>
-                  <li>Distopías</li>
-                  <li>Viajes en el tiempo</li>
-                  <li>Inteligencia artificial</li>
-                  <li>Espacio y exploración</li>
-                </ul>
-              </div>
-              <div className="dropdown-columna">
-                <strong>🧠 Desarrollo Personal</strong>
-                <ul>
-                  <li>Productividad</li>
-                  <li>Hábitos</li>
-                  <li>Liderazgo</li>
-                  <li>Motivación</li>
-                  <li>Inteligencia emocional</li>
-                </ul>
-              </div>
-              <div className="dropdown-columna">
-                <strong>📚 Historia y Biografías</strong>
-                <ul>
-                  <li>Biografías de personajes famosos</li>
-                  <li>Historia antigua</li>
-                  <li>Historia moderna</li>
-                  <li>Historia militar</li>
-                </ul>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Infantil y juvenil */}
-        <div className="nav-item" onClick={() => setMenuAbierto(menuAbierto === 'infantil' ? null : 'infantil')}>
-          Infantil y juvenil ↓
-          {menuAbierto === 'infantil' && (
-            <div className="dropdown">
-              <div className="dropdown-columna">
-                <strong>👶 Primeros lectores</strong>
-                <ul>
-                  <li>Cuentos ilustrados</li>
-                  <li>Libros de imágenes</li>
-                </ul>
-              </div>
-              <div className="dropdown-columna">
-                <strong>📘 Juvenil</strong>
-                <ul>
-                  <li>Aventura</li>
-                  <li>Fantasía</li>
-                  <li>Romance joven</li>
-                </ul>
-              </div>
+              {publicCategories.map(cat => (
+                <div
+                  key={cat.Id}
+                  className="dropdown-columna"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handleCategoryClick(cat.Id)
+                  }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <strong>{cat.Name}</strong>
+                </div>
+              ))}
+              {adultCategories.length > 0 && (
+                <>
+                  <div className="dropdown-columna dropdown-separador">
+                    <strong>🔞 Contenido adulto</strong>
+                    {adultCategories.map(cat => (
+                      <div
+                        key={cat.Id}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleCategoryClick(cat.Id)
+                        }}
+                        style={{ cursor: 'pointer', marginTop: '4px' }}
+                      >
+                        {cat.Name}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
 
         {/* Más vendidos */}
-        <a href="#">Mas vendidos</a>
+        <a href="#">Más vendidos</a>
 
       </nav>
     </header>
