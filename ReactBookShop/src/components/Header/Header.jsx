@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CartSideBar } from '../Cart/CartSideBar'
 import './Header.css'
 
@@ -10,7 +11,9 @@ function Header() {
       {/* Barra superior */}
       <div className="header-top">
         <div className="logo">
-          <img src="/favicon.svg" alt="Logo" />
+          <Link to="/" aria-label="Ir al inicio">
+            <img src="/favicon.svg" alt="Logo" />
+          </Link>
         </div>
         <div className="search-bar">
           <input type="text" placeholder="Busca por titulo, autor o genero" />
