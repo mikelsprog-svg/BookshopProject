@@ -3,13 +3,13 @@ import {OrderList} from './OrderList';
 import {AddressGrid} from './AddressGrid';
 import './Profile.css';
 
-export function Profile() {
+export function Profile({ user }) {
     return (
         <div className="container">
             <section className="section">
                 <h2 className="title">Mis pedidos</h2>
                 <div className="underline"></div>
-                <OrderList />
+                <OrderList userId={user.id}/>
             </section>
 
             <section className="section">

@@ -1,13 +1,17 @@
 import React from 'react';
 import './OrderItem.css';
 
-export function OrderItem (data) {
+export function OrderItem ({data}) {
     return (
         <tr className="row">
-            <td>{data.referencia}</td>
-            <td>{data.libreria}</td>
-            <td>{data.estado}</td>
-            <td>{data.fecha}</td>
+            <td>{data.reference}</td>
+            <td>{data.itemCount} libros</td>
+            <td>
+                <span className={`status ${data.status.toLowerCase()}`}>
+                    {data.status}
+                </span>
+            </td>
+            <td>{data.totalAmount} €</td>
         </tr>
     )
 }

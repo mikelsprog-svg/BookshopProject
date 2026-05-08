@@ -7,11 +7,11 @@ export function AddressCard() {
             <div className="card">
                 <input type="checkbox" checked readOnly className="checkbox" />
                 <div className="addressInfo">
-                    <strong>asdfgh</strong>
-                    <p>dsafgh sdafgh</p>
-                    <p>sdfghj</p>
-                    <p>dsafgdhj - dasfghj</p>
-                    <p>Córdoba</p>
+                    <strong>Calle Inventada</strong>
+                    <p>Inventada</p>
+                    <p>Inventada</p>
+                    <p>28001 - Madrid</p>
+                    <p>Madrid</p>
                 </div>
                 <div className="actions">
                     <button className="editBtn">✎ Editar</button>
