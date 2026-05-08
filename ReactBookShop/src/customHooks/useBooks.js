@@ -66,8 +66,8 @@ export function useBooks(categoryId, page, searchVal, bookId) {
             // filtro categoría
             const filteredBooks =
                 categoryId === "any"
-                    ? items
-                    : items.filter(
+                    ? allBooks
+                    : allBooks.filter(
                         (f) => f.Category === Number(categoryId)
                     );
 
