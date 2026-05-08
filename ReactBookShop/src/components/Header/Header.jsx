@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { CartSideBar } from '../Cart/CartSideBar'
 import categories from '../../data/categories.json'
@@ -30,8 +31,11 @@ function Header() {
     <header>
       {/* Barra superior */}
       <div className="header-top">
-        <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-          📚
+        <div className="logo">
+          <Link to="/" aria-label="Ir al inicio">
+            <img src="/favicon.svg" alt="Logo" />
+          </Link>
+        </div>
         </div>
 
         <form className="search-bar" onSubmit={handleSearch}>
