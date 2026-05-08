@@ -1,10 +1,10 @@
 import React from 'react';
 import { OrderItem } from './OrderItem';
 import './OrderList.css';
+import {useOrder} from "../../customHooks/useOrder.js";
 
-export function OrderList() {
-    // Aquí simularías un array de datos. Si está vacío, mostramos el mensaje.
-    const orders = [];
+export function OrderList({userId}) {
+    const { orders, loading } = useOrder(userId);
 
     return (
         <div className="wrapper">
@@ -27,15 +27,7 @@ export function OrderList() {
                 </tr>
                 </thead>
                 <tbody>
-                {orders.length > 0 ? (
-                    orders.map(order => <OrderItem key={order.id} data={order} />)
-                ) : (
-                    <tr>
-                        <td colSpan="4" className="empty">
-                            Ningún dato disponible en esta tabla =(
-                        </td>
-                    </tr>
-                )}
+                {orders.map(order => <OrderItem key={order.id} data={order} />)}
                 </tbody>
             </table>
 
