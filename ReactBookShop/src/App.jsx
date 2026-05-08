@@ -24,7 +24,11 @@ function App() {
         <Route path="/BookPage" element={<ProductPage/>} />
         <Route path="/Login" element={<div><Login /></div>} />
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
-        <Route path="/CartPage" element={<CartPage />} />
+        <Route path="/CartPage" element={
+          <PrivateRoute>
+            <CartPage />
+          </PrivateRoute>
+        } />
         <Route path="/profileLOCKED" element={
           <PrivateRoute>
             <div><ProfilePage/></div>

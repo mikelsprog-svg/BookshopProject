@@ -37,6 +37,25 @@
   width: 100%;
 }
 
+/* Asegurarnos de que el botón de checkout use el estilo primario (naranja) */
+.cart-summary__checkout {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  padding: 10px 14px;
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+/* Si el botón está deshabilitado, mantenemos el fondo naranja pero con menor opacidad */
+.cart-summary__checkout--disabled,
+.cart-summary__checkout[disabled] {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .cart-summary__continue {
   border: none;
   background: transparent;

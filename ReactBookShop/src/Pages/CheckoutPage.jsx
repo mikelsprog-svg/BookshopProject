@@ -39,7 +39,7 @@ export function CheckoutPage() {
 	};
 
 	return (
-		<div className="checkout-page container">
+		<div className="checkout-page">
 			<div className="checkout-page__left">
 				<CheckoutUseInfo
 					formData={formData}
