@@ -10,10 +10,7 @@ export function Landing() {
     const [pageNum, setPage] = useState(1)
     const { topBooks, loading, error } = useBooks("any", 1, "", -1)
 
-    const handleBookClick = (bookId) => {
-        navigate(`/BookPage?id=${bookId}`)
-    }
-
+ 
     const handleCategoryClick = (categoryId) => {
         navigate(`/SearchLibro?category=${categoryId}`)
     }
