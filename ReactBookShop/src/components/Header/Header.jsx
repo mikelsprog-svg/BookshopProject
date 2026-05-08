@@ -9,7 +9,9 @@ function Header() {
     <header>
       {/* Barra superior */}
       <div className="header-top">
-        <div className="logo">📚</div>
+        <div className="logo">
+          <img src="/favicon.svg" alt="Logo" />
+        </div>
         <div className="search-bar">
           <input type="text" placeholder="Busca por titulo, autor o genero" />
           <button>🔍</button>
