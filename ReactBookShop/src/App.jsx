@@ -8,7 +8,8 @@ import { CheckoutPage } from "./Pages/CheckoutPage.jsx";
 import { CartContext } from './context/cart/CartContext.jsx'
 import {Products} from "./Pages/Products.jsx";
 import {ProductPage} from "./Pages/ProductPage.jsx";
-
+import { Landing } from "./Pages/Landing.jsx";
+import { Login } from "./Pages/Login.jsx";
 function App() {
   return (
 
@@ -16,10 +17,10 @@ function App() {
       <CartProvider>
       <Header />
       <Routes>
-        <Route path="/" element={<div>Página de inicio</div>} />
+        <Route path="/" element={<Landing/>} />
         <Route path="/SearchLibro" element={<Products/>} />
         <Route path="/BookPage" element={<ProductPage/>} />
-        <Route path="/login" element={<div>Página de login</div>} />
+        <Route path="/Login" element={<div><Login /></div>} />
         <Route path="/CartPage" element={<CartPage />} />
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
         <Route path="/profileLOCKED" element={
