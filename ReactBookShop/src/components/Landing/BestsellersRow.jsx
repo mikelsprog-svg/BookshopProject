@@ -12,7 +12,7 @@ export function BestsellersRow({ topBooks = [], onBookClick }) {
             <div className="bestsellers_row_container">
                 {topBooks.map((book) => (   
                     <div key={book.Id} className="bestseller_book" 
-                        onClick={() => onBookClick(book.Id)}>
+                       >
                         <CardBookComponent book={book} />
                     </div>
                 ))}

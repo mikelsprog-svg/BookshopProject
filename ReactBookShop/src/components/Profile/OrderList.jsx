@@ -1,10 +1,11 @@
 import React from 'react';
 import { OrderItem } from './OrderItem';
 import './OrderList.css';
-//import {useOrder} from "../../customHooks/useOrder.js";
+
 import oldOrders from "../../data/oldOrders.json"
+import {useOrder} from "../../customHooks/useOrder.js";
 export function OrderList({userId}) {
-    //const { orders, loading } = useOrder(userId);
+    const { orders, loading } = useOrder(userId);
 
     return (
         <div className="wrapper">
@@ -27,7 +28,7 @@ export function OrderList({userId}) {
                 </tr>
                 </thead>
                 <tbody>
-                {oldOrders.map(order => <OrderItem key={order.id} data={order} />)}
+                {orders.map(order => <OrderItem key={order.id} data={order} />)}
                 </tbody>
             </table>
 
