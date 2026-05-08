@@ -5,18 +5,22 @@ import {useBooks} from "../customHooks/useBooks.js";
 import {useComment} from "../customHooks/useComment.js";
 import {BookInfoBig} from "../components/ProductPage/BookInfoBig.jsx";
 import {Comment} from "../components/ProductPage/Comment.jsx";
-
+import {useSearchParams} from "react-router-dom";
+import {allItems} from "../data/books.js";
+import users from "../data/users"
 export function ProductPage()
 {
+    const [searchParams] = useSearchParams();
 
-    const [bookId, setBookId] = useState(5);
-    const {bookFromId, loading } = useBooks("",0,undefined,3);
-    const {comments, loading: loadingComments } = useComment(bookId, -1);
+    const bookId = searchParams.get("bookId");
+    const {bookFromId, loading } = useBooks("",0,undefined,bookId);
+    const {comments, loading: loadingComments } = useComment(parseInt(bookId), -1);
 
     if(loading || loadingComments)
     {
         return (<></>)
     }
+
     return (
 
 
@@ -24,13 +28,13 @@ export function ProductPage()
         <BookInfoBig book={bookFromId}/>
         <div className="user_review_div" >
             <div className="value_panel">
-                <h3> Nota media 3 Estrellas</h3>
+                <h3> Nota media {bookFromId.GlobalRating} Estrellas</h3>
                 <div className="number_stars">
-                    <p>5 Estrellas : 20%</p>
-                    <p>4 Estrellas : 20%</p>
-                    <p>3 Estrellas : 20%</p>
-                    <p>2 Estrellas : 20%</p>
-                    <p>1 Estrella  : 20%</p>
+                    <p>5 Estrellas : {comments.filter((item) => item.Rating === 5).length}</p>
+                    <p>4 Estrellas : {comments.filter((item) => item.Rating === 4).length}</p>
+                    <p>3 Estrellas : {comments.filter((item) => item.Rating === 3).length}</p>
+                    <p>2 Estrellas : {comments.filter((item) => item.Rating === 2).length}</p>
+                    <p>1 Estrella  : {comments.filter((item) => item.Rating === 1).length}</p>
                 </div>
             </div>
             <div className="commentspanel_div">
@@ -39,9 +43,9 @@ export function ProductPage()
                     comments.map((item) => (
                         <Comment
                             key={item.Id}
-                            review={item.Review}
+                            comment={item.Review}
                             rating={item.Rating}
-                            user={item.User}
+                            userName={ users.find((val) => val.Id === item.Id).name}
                         />
                     ))
                 ) : (

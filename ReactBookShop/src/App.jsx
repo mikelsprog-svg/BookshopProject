@@ -10,6 +10,7 @@ import {Products} from "./Pages/Products.jsx";
 import {ProductPage} from "./Pages/ProductPage.jsx";
 import { Landing } from "./Pages/Landing.jsx";
 import { Login } from "./Pages/Login.jsx";
+import {ProfilePage} from "./Pages/ProfilePage.jsx";
 function App() {
   return (
 
@@ -25,12 +26,12 @@ function App() {
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
         <Route path="/profileLOCKED" element={
           <PrivateRoute>
-            <div>Página de profile</div>
+            <div><ProfilePage/></div>
           </PrivateRoute>
         } />
         <Route path="/chekoutLOCKED" element={
           <PrivateRoute>
-            <div>chekoutLOCKED</div>
+            <div><CheckoutPage/></div>
           </PrivateRoute>
         } />
       </Routes>

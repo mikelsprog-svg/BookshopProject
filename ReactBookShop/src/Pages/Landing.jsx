@@ -12,7 +12,7 @@ export function Landing() {
 
  
     const handleCategoryClick = (categoryId) => {
-        navigate(`/SearchLibro?category=${categoryId}`)
+        navigate(`/SearchLibro?filterId=${categoryId}`)
     }
 
     if (loading) {
@@ -46,8 +46,7 @@ export function Landing() {
 
             {topBooks && topBooks.length > 0 && (
                 <BestsellersRow 
-                    topBooks={topBooks} 
-                    onBookClick={handleBookClick}
+                    topBooks={topBooks}
                 />
             )}
 

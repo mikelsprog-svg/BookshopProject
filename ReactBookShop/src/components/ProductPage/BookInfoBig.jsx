@@ -9,12 +9,11 @@ export  function BookInfoBig({book})
 
 
     return( <div className="book_info_div">
-        <img className="book_image_product_page" src="/placeHolder.jpg" alt="Italian Trulli"/>
+        <img className="book_image_product_page" src={book.Image}  alt={book.Name}/>
         <div className="book_info_description">
             <h2 className="book_info_heading">
                 {book.Name}
             </h2>
-            <StarGrid GlobalRating={book.GlobalRating}/>
             <p className="book_info_author">
                 {book.Author}
             </p>
@@ -25,8 +24,8 @@ export  function BookInfoBig({book})
 
         </div>
         <div className="book_purchase_div">
-            <strong className="price">     {book.Price}</strong>
-            <strong className="discountPrice"> {book.PriceAfterDiscount}</strong>
+            <p className="price">     {book.Price}</p>
+            <p className="discountPriceWhite" > {book.PriceAfterDiscount}</p>
             <button onClick={()=>addToCart(book)} className="book_add_cart"> Add to cart </button>
 
         </div>

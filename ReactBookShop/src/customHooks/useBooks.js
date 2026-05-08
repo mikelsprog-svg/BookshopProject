@@ -77,8 +77,10 @@ export function useBooks(categoryId, page, searchVal, bookId) {
             // búsqueda por id
             if (bookId !== -1) {
                 const foundBook = allBooks.find(
-                    (e) => e.Id === bookId
+                    (e) => e.Id === parseInt(bookId)
                 );
+
+                console.log(foundBook);
 
                 setGetBookFromId(foundBook || {});
             }

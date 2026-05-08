@@ -2,7 +2,7 @@ import {Fragment, useState} from "react";
 import {GridBooksComponent} from "../components/Products/GridBooksComponent.jsx";
 import "./Products.css"
 import {useBooks} from "../customHooks/useBooks.js";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 export function Products()
 {
     const [searchParams] = useSearchParams();
