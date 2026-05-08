@@ -868,13 +868,15 @@ export const getProductsMockFakeElastiSearch = (page = 1, search ) =>
   const itemsPerPage = 20;
   const searchedItems = [] ;
 
-
-  const searchRegex = search
+  const words = search
       .toLowerCase()
       .trim()
-      .replace(/\s+/g, "|");
+      .split(/\s+/);
 
-  const regex = new RegExp(searchRegex, "i");
+  const regex = new RegExp(
+      words.map(word => `(?=.*\\b${word}\\b)`).join(""),
+      "i"
+  );
   for (const book of allItems)
   {
     const compareVar =  `${book.Author} ${book.Description} ${book.Name}`.toLowerCase();

@@ -7,7 +7,7 @@ import {BookInfoBig} from "../components/ProductPage/BookInfoBig.jsx";
 import {Comment} from "../components/ProductPage/Comment.jsx";
 import {useSearchParams} from "react-router-dom";
 import {allItems} from "../data/books.js";
-import users from "../data/users"
+/*users.find((val) => val.Id === item.Id).name*/
 export function ProductPage()
 {
     const [searchParams] = useSearchParams();
@@ -45,7 +45,7 @@ export function ProductPage()
                             key={item.Id}
                             comment={item.Review}
                             rating={item.Rating}
-                            userName={ users.find((val) => val.Id === item.Id).name}
+                            userName={ item.Id}
                         />
                     ))
                 ) : (
