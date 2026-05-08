@@ -56,6 +56,16 @@ header {
   font-size: 14px;
 }
 
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
 .header-nav {
   background-color: #16213e;
   display: flex;

@@ -49,8 +49,10 @@ function Header() {
 
         <div className="user-info">
           <CartSideBar />
-          <span>Bienvenido, Jose Luis</span>
-          <span>👤</span>
+          <Link to="/Login" className="login-link">
+  Iniciar sesión
+</Link>
+<span>👤</span>
         </div>
       </div>
 
