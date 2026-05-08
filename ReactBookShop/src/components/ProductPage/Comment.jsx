@@ -1,18 +1,16 @@
 import {StarGrid} from "../Products/StarGrid.jsx";
 
-export function Comment({comment, userName,rating })
+export function Comment({comment, userName, rating, reviewTitle })
 {
 
-    return( <div className="user_review" >
-        <h3> {userName}</h3>
-        <StarGrid GlobalRating={ rating} />
-        <div className="user_review_text">
-            <p>
-                {comment}
-            </p>
+    return( <article className="review_card" >
+        <div className="review_card_stars">
+            <StarGrid GlobalRating={ rating} />
         </div>
-        <br/>
-        <br/>
-        <hr/>
-    </div>)
+        <h4 className="review_card_title">{reviewTitle}</h4>
+        <p className="review_card_body">{comment}</p>
+        <div className="review_card_meta">
+            <span className="review_card_user">{userName}</span>
+        </div>
+    </article>)
 }
