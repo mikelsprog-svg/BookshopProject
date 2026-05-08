@@ -1,0 +1,55 @@
+.bestsellers_section {
+  
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bestsellers_title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.25em;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.bestsellers_row_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.bestseller_item {
+  transition: transform 0.2s ease;
+}
+
+.bestseller_item:hover {
+  transform: translateY(-4px);
+}
+
+.bestseller_book {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.bestseller_book:hover {
+  transform: translateY(-4px);
+}
+
+
+@media (max-width: 768px) {
+  .bestsellers_row_container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .bestsellers_title {
+    font-size: 1.5rem;
+  }
+}

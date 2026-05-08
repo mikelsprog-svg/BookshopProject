@@ -2,13 +2,19 @@ import {Fragment, useState} from "react";
 import {GridBooksComponent} from "../components/Products/GridBooksComponent.jsx";
 import "./Products.css"
 import {useBooks} from "../customHooks/useBooks.js";
+import { useSearchParams } from "react-router-dom";
 export function Products()
 {
+    const [searchParams] = useSearchParams();
+
+    const filterId = searchParams.get("filterId");
+    const searchVal = searchParams.get("searchVal");
+
+
     const [pageNum,setPage]  =useState(1);
-    const [filterId,setFilter] =useState("any");
-    const [searchVal,setSearchVal] =useState("las");
 
 
+    console.log(filterId);
    const {booksPaged,allBooks,searchedBooks, metaData, loading,error } =useBooks(filterId,pageNum,searchVal,-1);
 return(
         <Fragment>

@@ -17,8 +17,8 @@ export function GridBooksComponent({loading,error,booksPaged,searchedBooks})
 
         <section className="BookGrid">
             {searchedBooks.length>1? searchedBooks.map((book)=>(
-                <CardBookComponent book={book}/> )) : booksPaged.map((book)=>(
-                <CardBookComponent book={book}/>
+                <CardBookComponent key={book.Id} book={book}/> )) : booksPaged.map((book)=>(
+                <CardBookComponent key={book.Id} book={book}/>
             ))
             }
 

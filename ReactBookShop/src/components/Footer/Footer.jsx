@@ -4,8 +4,10 @@ import "./Footer.css";
 export default function Footer() {
     return (
         <footer className="footer">
-            <p>© 2026 UNIR Supplies. Todos los derechos reservados.</p>
+            <div className="footer-content">
+                <div className="footer-logo">📚</div>
+                <p>© 2026 - Relatos de papel</p>
+            </div>
         </footer>
     );
 }
-

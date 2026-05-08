@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    background-color: #FFFFFF;
+    background-color: #e8ecf5;
     border-radius: 12px;
     padding: 16px;
     width: 220px;
@@ -48,7 +48,11 @@
     font-size: 1.1rem;
     font-weight: bold;
 }
-
+.discountPriceWhite {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 .star_grid {
     display: flex;
     gap: 4px;

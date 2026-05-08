@@ -3,7 +3,8 @@ import {
     allItems,
     getProductsMock,
     getProductsMockFakeElastiSearch,
-} from "../data/books.js";
+} 
+from "../data/books.js";
 
 export function useBooks(categoryId, page, searchVal, bookId) {
     const [allBooks, setAllBooks] = useState([]);
@@ -14,6 +15,7 @@ export function useBooks(categoryId, page, searchVal, bookId) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [metaData, setMetadata] = useState({});
+    const [topBooks, setTopBooks] = useState([]);
 
     // carga inicial
     useEffect(() => {
@@ -22,6 +24,16 @@ export function useBooks(categoryId, page, searchVal, bookId) {
         const timer = setTimeout(() => {
             try {
                 setAllBooks(allItems);
+                
+              
+                // obtener los 3 libros más valorados
+                const topThree = allItems
+                    .slice()
+                    .sort((a, b) => b.GlobalRating - a.GlobalRating)
+                    .slice(0, 3);
+                
+                
+                setTopBooks(topThree);
                 setLoading(false);
             } catch (e) {
                 setError("Book not found");
@@ -65,8 +77,10 @@ export function useBooks(categoryId, page, searchVal, bookId) {
             // búsqueda por id
             if (bookId !== -1) {
                 const foundBook = allBooks.find(
-                    (e) => e.Id === bookId
+                    (e) => e.Id === parseInt(bookId)
                 );
+
+                console.log(foundBook);
 
                 setGetBookFromId(foundBook || {});
             }
@@ -79,6 +93,7 @@ export function useBooks(categoryId, page, searchVal, bookId) {
         booksPaged,
         allBooks,
         searchedBooks,
+        topBooks,
         bookFromId,
         metaData,
         loading,

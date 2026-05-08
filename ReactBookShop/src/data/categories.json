@@ -2,37 +2,44 @@
   {
     "Id": 1,
     "Name": "Fiction",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "fiction.png"
   },
   {
     "Id": 2,
     "Name": "Fantasy",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "fantasy.png"
   },
   {
     "Id": 3,
     "Name": "Science",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "science.png"
   },
   {
     "Id": 4,
     "Name": "History",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "history.png"
   },
   {
     "Id": 5,
     "Name": "Business",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "business.png"
   },
   {
     "Id": 6,
     "Name": "Technology",
-    "isAdulta": false
+    "isAdulta": false,
+    "image": "technology.png"
   },
   {
     "Id": 7,
     "Name": "Romance",
     "isAdulta": false
+   
   },
   {
     "Id": 8,
