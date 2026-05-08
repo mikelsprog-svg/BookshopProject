@@ -2,33 +2,51 @@ import './Login.css'
 import google_logo from '../assets/google-logo.png'
 import facebook_logo from '../assets/facebook-logo.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../AuthContext'
+import users from '../data/users.json'
 
 export function Login() {
-    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
     function handleChange(e) {
         const value = e.target.value;
-        setEmail(value);
-        if (value === "" || validateEmail(value)) {
+        setName(value);
+        if (value.trim() === "") {
             setError("");
-        } else {
-            setError("Introduce un correo electrónico válido.");
+        }
+    }
+
+    function handlePasswordChange(e) {
+        setPassword(e.target.value);
+        if (error) {
+            setError("");
         }
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (validateEmail(email)) {
-            console.log("Correo enviado:", email);
-            setEmail("");
+        const normalizedName = name.trim();
+        const matchedUser = users.find(
+            (user) => user.name.toLowerCase() === normalizedName.toLowerCase() && user.Pass === password
+        );
+
+        if (matchedUser) {
+            login({
+                id: matchedUser.Id,
+                name: matchedUser.name,
+                BillingAdresse: matchedUser.BillingAdresse,
+            });
+            setName("");
+            setPassword("");
             setError("");
+            navigate('/profileLOCKED');
         } else {
-            setError("Introduce un correo electrónico válido.");
+            setError("Nombre o contraseña incorrectos.");
         }
     }
 
@@ -54,16 +72,22 @@ export function Login() {
             </div>
             <div className="login_form_div">
                 <form className="login_form" onSubmit={handleSubmit}>
-                    <label htmlFor='email'>Correo electrónico</label>
+                    <label htmlFor='name'>Nombre</label>
                     <input
-                        id='email'
-                        type='email'
-                        placeholder='Introduce tu correo'
-                        value={email}
+                        id='name'
+                        type='text'
+                        placeholder='Introduce tu nombre'
+                        value={name}
                         onChange={handleChange}
                     />
                     <label htmlFor='password'>Contraseña</label>
-                    <input id='password' type='password' placeholder='Introduce tu contraseña'/>
+                    <input
+                        id='password'
+                        type='password'
+                        placeholder='Introduce tu contraseña'
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
                     <p className="login-error">{error}</p>
                     <div className='extra_options'>
                         <label className='remember' htmlFor='remember'>

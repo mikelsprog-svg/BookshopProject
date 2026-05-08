@@ -11,6 +11,7 @@ import {ProductPage} from "./Pages/ProductPage.jsx";
 import { Landing } from "./Pages/Landing.jsx";
 import { Login } from "./Pages/Login.jsx";
 import {ProfilePage} from "./Pages/ProfilePage.jsx";
+import Footer from './components/Footer/Footer'
 function App() {
   return (
 
@@ -22,8 +23,8 @@ function App() {
         <Route path="/SearchLibro" element={<Products/>} />
         <Route path="/BookPage" element={<ProductPage/>} />
         <Route path="/Login" element={<div><Login /></div>} />
-        <Route path="/CartPage" element={<CartPage />} />
         <Route path="/CheckoutPage" element={<CheckoutPage />} />
+        <Route path="/CartPage" element={<CartPage />} />
         <Route path="/profileLOCKED" element={
           <PrivateRoute>
             <div><ProfilePage/></div>
@@ -35,6 +36,7 @@ function App() {
           </PrivateRoute>
         } />
       </Routes>
+      <Footer />
       </CartProvider>
     </>
 

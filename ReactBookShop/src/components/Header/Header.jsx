@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../AuthContext'
 import { CartSideBar } from '../Cart/CartSideBar'
 import categories from '../../data/categories.json'
 import './Header.css'
@@ -9,6 +10,7 @@ function Header() {
   const [menuAbierto, setMenuAbierto] = useState(null)
   const [searchInput, setSearchInput] = useState('')
   const navigate = useNavigate()
+  const { usuario } = useAuth()
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -49,10 +51,10 @@ function Header() {
 
         <div className="user-info">
           <CartSideBar />
-          <Link to="/Login" className="login-link">
-  Iniciar sesión
-</Link>
-<span>👤</span>
+          <Link to={usuario ? '/profileLOCKED' : '/Login'} className="login-link">
+            {usuario ? 'Ir a mi perfil' : 'Iniciar sesión'}
+          </Link>
+          <span>👤</span>
         </div>
       </div>
 

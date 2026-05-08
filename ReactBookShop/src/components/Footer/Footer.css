@@ -3,22 +3,27 @@
     color: #ffffff;
     padding: 15px 0;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-content {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 14px;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .footer-logo {
-    height: 30px;
-    width: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .footer p {
@@ -26,4 +31,5 @@
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     letter-spacing: 0.5px;
+    text-align: center;
 }
