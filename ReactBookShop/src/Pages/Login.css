@@ -1,0 +1,198 @@
+.Login {
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    padding-top: 30px;
+}
+
+.login_title {
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    font-size: 270%;
+    font-weight: bold;
+    font-family: var(--heading);
+}
+.google_login_button {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.google_button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #EA4335;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.google_button:hover {
+    background-color: #d33d2f;
+}
+
+
+
+.google_button img {
+    width: 20px;
+    height: 20px;
+}
+
+.facebook_login_button {
+     width: 100%;
+    max-width: 420px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.facebook_button:hover{
+    background-color: #23396a;
+
+}
+
+.facebook_button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3b5998;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.facebook_button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.divider {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #999;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.divider span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.login_form_div {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.login_form label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+}
+
+#email,
+#password {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+   
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.enter_button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    background-color: #16213e;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-weight: bold;
+    display: block;
+}
+
+.extra_options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.remember input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.forgot_password {
+    font-size: 0.95rem;
+    color: #16213e;
+    text-decoration: none;
+}
+
+.forgot_password:hover {
+    text-decoration: underline;
+}
+
+.forgot_password:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 20px 0;
+    text-align: center;
+    color: #999;
+}
